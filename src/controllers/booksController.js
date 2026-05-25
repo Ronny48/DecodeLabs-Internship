@@ -82,7 +82,7 @@ export const getBooks = async (req, res) => {
 export const getBook = async (req, res) => {
   try {
     const { id } = req.params;
-    const book = books.find((book) => book.id === parseInt(id));
+    const book = await books.find((book) => book.id === parseInt(id));
     if (!book) {
       return res.status(404).json({ message: "Book not found", data: null });
     }
@@ -106,7 +106,7 @@ export const addBook = async (req, res) => {
       author,
       description,
     };
-    books.push(newBook);
+    await books.push(newBook);
     return res.status(201).json({ message: "Book added", data: newBook });
   } catch (error) {
     return res.status(500).json({ message: "Error", data: null });
