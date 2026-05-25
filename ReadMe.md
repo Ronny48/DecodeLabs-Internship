@@ -30,6 +30,10 @@ npm install
 ## Run the server
 
 ```bash
+cp .env.example .env
+```
+
+```bash
 npm start
 ```
 
@@ -39,12 +43,6 @@ You can also set a custom port with an environment variable:
 
 ```bash
 PORT=8080 npm start
-```
-
-## OR
-
-```bash
-cp .env.example .env
 ```
 
 And then you edit the port
